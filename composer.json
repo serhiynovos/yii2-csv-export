@@ -1,0 +1,17 @@
+{
+    "name": "serrg1994/yii2-csv-export",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "csv", "export"],
+    "description": "Export data to CSV file",
+    "authors": [
+        {
+            "name": "Serhiy Novoseletskiy",
+            "email": "novoseletskiyserhiy@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "serrg1994\\csvexport\\": ""
+        }
+    }
+}
