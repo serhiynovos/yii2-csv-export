@@ -3,10 +3,17 @@ namespace serrg1994\csvexport;
 use yii\base\Exception;
 
 /**
- * Created by PhpStorm.
- * User: serhiy
- * Date: 20.04.16
- * Time: 12:35
+ * Class for export array data to csv file
+ *
+ *
+ * CSVExport::Export([
+    'dirName' => Yii::getAlias('@webroot'),
+    'fileName' => 'users.csv',
+    'data' => [
+            ['#', 'User Name', 'Email'],
+            ['1', 'Serhiy Novoseletskiy', 'novoseletskiyserhiy@gmail.com']
+        ]
+    ]);
  */
 class CSVExport
 {
@@ -21,14 +28,18 @@ class CSVExport
      */
     public static function Export(array $options = [])
     {
-        static::$data = $options['data'] ? $options['data'] : [];
-        static::$fileName = $options['fileName'] ? $options['fileName'] : 'file.csv';
+        static::$data = isset($options['data']) ? $options['data'] : [];
+        static::$fileName = isset($options['fileName']) ? $options['fileName'] : 'file.csv';
 
         if (!isset($options['dirName'])) {
             throw new Exception('You must set dirName');
         }
 
         static::$dirName = $options['dirName'];
+
+        if (static::$dirName[strlen(static::$dirName - 1)] !== '/') {
+            static::$dirName .= '/';
+        }
 
         return self::array2csv(static::$data, static::$dirName, static::$fileName);
     }
