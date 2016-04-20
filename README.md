@@ -7,13 +7,13 @@ Installation
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 ```
-php composer.phar require serrg1994/yii2-csv-export "*"
+php composer.phar require serrg1994/yii2-csv-export "@dev"
 ```
 
 or add
 
 ```json
-"serrg1994/yii2-csv-export": "*"
+"serrg1994/yii2-csv-export": "@dev"
 ```
 
 to the require section of your composer.json.
