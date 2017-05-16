@@ -37,7 +37,7 @@ class CSVExport
 
         static::$dirName = $options['dirName'];
 
-        if (static::$dirName[strlen(static::$dirName - 1)] !== '/') {
+        if (static::$dirName[strlen(static::$dirName) - 1] !== '/') {
             static::$dirName .= '/';
         }
 
